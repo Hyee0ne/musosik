@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무소식 공간 초대</title>
+<meta property="og:title" content="무소식 공간에 초대받았어요">
+<meta property="og:description" content="무소식이희소식 앱에서 열면 서로의 아바타 상태를 볼 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hyee0ne.github.io/musosik/i/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hyee0ne.github.io/musosik/i/og.png">
+<style>
+  :root { color-scheme: light dark; --bg: #f6f3ee; --fg: #1b1a17; --muted: #6b665d; --line: #1b1a17; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #151412; --fg: #f1ede6; --muted: #a39d92; --line: #f1ede6; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, "Apple SD Gothic Neo", sans-serif; }
+  main { max-width: 420px; margin: 0 auto; padding: 56px 16px; }
+  h1 { font-size: 28px; line-height: 1.25; margin: 0 0 12px; border-bottom: 2px solid var(--line); padding-bottom: 12px; }
+  p { color: var(--muted); margin: 0 0 16px; }
+  .note { font-size: 14px; }
+  .open { display: block; margin: 24px 0; padding: 14px 16px; border: 2px solid var(--line); color: var(--fg); text-decoration: none; text-align: center; font-weight: 700; }
+</style>
+</head>
+<body>
+<main>
+  <h1>무소식 공간에<br>초대받았어요</h1>
+  <p>무소식이희소식(STILL KICKING) 앱이 설치되어 있다면 아래 버튼을 눌러 주세요.</p>
+  <a class="open" id="open" href="stillkicking://i">앱에서 열기</a>
+  <p class="note">카카오톡 안에서 열었다면 버튼이 안 될 수 있어요. 오른쪽 아래 ⋯ 메뉴에서 “다른 브라우저로 열기”(Safari)를 누른 뒤 다시 눌러 주세요.</p>
+  <p class="note">앱이 아직 없다면, 초대한 친구에게 설치 방법을 물어봐 주세요.</p>
+</main>
+<script>
+  var t = new URLSearchParams(location.search).get('t');
+  if (t) document.getElementById('open').href = 'stillkicking://i?t=' + encodeURIComponent(t);
+  // 카카오톡 인앱 브라우저는 유니버설 링크를 막으니 Safari로 넘긴다
+  if (/KAKAOTALK/i.test(navigator.userAgent)) {
+    location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(location.href);
+  }
+</script>
+</body>
+</html>

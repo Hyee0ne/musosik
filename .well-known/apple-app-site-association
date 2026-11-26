@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2Q5557H9T4.com.stillkicking.app"],
+        "components": [
+          { "/": "/i/*", "comment": "무소식이희소식 초대 링크 (전용 도메인을 연결하면 이 파일이 도메인 뿌리에서 읽힌다)" }
+        ]
+      }
+    ]
+  }
+}
